@@ -521,3 +521,72 @@ a {
 .badge.green { background-color: #28a745; } /* สีเขียว */
 .badge.blue { background-color: #17a2b8; } /* สีฟ้า */
 .badge.yellow { background-color: #ffc107; color: #333; } /* สีเหลือง */
+
+/* =========================================
+   12. การแสดงผลบนมือถือ (Mobile Responsive)
+   ========================================= */
+
+/* เมื่อหน้าจอเล็กกว่า 768px (แท็บเล็ตและมือถือ) */
+@media screen and (max-width: 768px) {
+
+    /* 1. ปรับเมนู (Navbar) ให้เรียงลงมาแนวตั้ง */
+    .navbar .container {
+        flex-direction: column; /* เปลี่ยนแนวนอนเป็นแนวตั้ง */
+        padding-bottom: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column; /* ลิงก์เรียงลงมา */
+        gap: 15px; /* ระยะห่างระหว่างบรรทัด */
+        margin-top: 20px; /* เว้นระยะห่างจากโลโก้ */
+        width: 100%; /* ให้กว้างเต็มจอ */
+        text-align: center; /* จัดตัวหนังสือกลาง */
+        background-color: #f8f9fa; /* ใส่สีพื้นหลังเมนูหน่อยให้ดูแยกส่วน */
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    /* 2. ปรับขนาดตัวหนังสือหน้าปก (Hero) ให้เล็กลง */
+    .hero h1 {
+        font-size: 2rem; /* ลดขนาดจาก 3rem */
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        padding: 0 20px; /* เพิ่มขอบข้างไม่ให้ตัวหนังสือชิดจอเกินไป */
+    }
+
+    /* 3. ปรับปุ่มหมวดหมู่ให้กดง่ายขึ้นในมือถือ */
+    .category-filters {
+        gap: 8px; /* ลดช่องว่าง */
+    }
+    
+    .filter-btn {
+        width: 48%; /* ให้ปุ่มเรียงกันแถวละ 2 ปุ่ม */
+        font-size: 0.85rem; /* ลดขนาดตัวอักษรนิดนึง */
+        padding: 8px 10px;
+    }
+
+    /* 4. ปรับตารางปลา (Fish Grid) ให้แสดงผลเต็มความกว้าง */
+    .fish-grid {
+        grid-template-columns: 1fr; /* บังคับให้เหลือ 1 คอลัมน์ (เรียงเดี่ยว) */
+        gap: 20px;
+    }
+    
+    .fish-card {
+        max-width: 100%; /* ให้การ์ดกว้างเต็มจอ */
+    }
+
+    /* 5. ปรับส่วนผู้จัดทำ (About Us) */
+    .team-grid {
+        flex-direction: column; /* เรียงลงมาแนวตั้ง */
+        align-items: center; /* จัดให้อยู่ตรงกลาง */
+    }
+
+    /* 6. ปรับ Popup (Modal) ให้ไม่ล้นจอ */
+    .modal-content {
+        width: 95%; /* ให้กว้างเกือบเต็มจอ */
+        margin: 10px;
+        padding: 20px;
+    }
+}
