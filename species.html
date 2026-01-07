@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายชื่อปลาทั้งหมด - สายพันธุ์ปลาน้ำจืดไทย</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Logo"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="species.html" class="active">ข้อมูลสายพันธุ์</a></li>
+                <li><a href="news.html">ข่าวสาร/วิดีโอ</a></li>
+                <li><a href="about.html">ผู้จัดทำ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero" style="height: 300px;">
+        <div class="hero-content">
+            <h1>ข้อมูลสายพันธุ์ปลา</h1> 
+            <p>เรียนรู้ความแตกต่างของปลาน้ำจืดไทยแต่ละประเภท</p>
+        </div>
+    </header>
+
+    <section class="container fish-section">
+        
+        <div class="category-filters">
+            <button class="filter-btn active" onclick="filterFish('all')">ทั้งหมด</button>
+            <button class="filter-btn" onclick="filterFish('economic')">🐟 ปลาเศรษฐกิจ</button>
+            <button class="filter-btn" onclick="filterFish('rare')">🌊 ปลาหายาก/อนุรักษ์</button>
+            <button class="filter-btn" onclick="filterFish('beautiful')">✨ ปลาสวยงาม</button>
+        </div>
+
+        <div style="text-align: right; margin-bottom: 20px;">
+            <input type="text" id="searchInput" placeholder="ค้นหาชื่อปลา..." onkeyup="searchFish()" style="padding: 10px; border-radius: 5px; border: 1px solid #ddd; width: 100%; max-width: 300px;">
+        </div>
+
+        <div class="fish-grid">
+            <div class="fish-card" data-category="beautiful economic">
+                <img src="images/ปลาตะเพียน.jpg" alt="ปลาตะเพียน">
+                <div class="card-info">
+                    <h3>ปลาตะเพียน</h3>
+                    <p>ชื่อวิทยาศาสตร์: Barbonymus gonionotus</p>
+                    <span class="badge yellow">ปลาสวยงาม</span>
+                    <a href="#" class="btn-small">ดูรายละเอียด</a>
+                </div>
+            </div>
+
+            <div class="fish-card" data-category="rare">
+                <img src="images/ปลากระโห้.jfif" alt="ปลากระโห้"> 
+                <div class="card-info">
+                    <h3>ปลากระโห้</h3>
+                    <p>ชื่อวิทยาศาสตร์: Catlocarpio siamensis</p>
+                    <span class="badge blue">ปลาหายาก</span>
+                    <a href="#" class="btn-small">ดูรายละเอียด</a>
+                </div>
+            </div>
+
+             <div class="fish-card" data-category="economic">
+                <img src="images/ปลานิล.png" alt="ปลานิล"> 
+                <div class="card-info">
+                    <h3>ปลานิล</h3>
+                    <p>ชื่อวิทยาศาสตร์: Oreochromis niloticus</p> 
+                    <span class="badge green">ปลาเศรษฐกิจ</span>
+                    <a href="#" class="btn-small">ดูรายละเอียด</a>
+                </div>
+            </div>
+
+            <div class="fish-card" data-category="rare">
+                <img src="images/ปลาบึก.jfif" alt="ปลาบึก">
+                <div class="card-info">
+                    <h3>ปลาบึก</h3>
+                    <p>ชื่อวิทยาศาสตร์: Pangasianodon gigas</p>
+                    <span class="badge blue">ปลาหายาก</span>
+                    <a href="#" class="btn-small">ดูรายละเอียด</a>
+                </div>
+            </div>
+
+            <div class="fish-card" data-category="economic">
+                <img src="images/ปลาดุก.jpg" alt="ปลาดุก"> 
+                <div class="card-info">
+                    <h3>ปลาดุกด้าน</h3>
+                    <p>ชื่อวิทยาศาสตร์: Clarias batrachus</p>
+                    <span class="badge green">ปลาเศรษฐกิจ</span>
+                    <a href="#" class="btn-small">ดูรายละเอียด</a>
+                </div>
+            </div>
+
+            <div class="fish-card" data-category="economic">
+                <img src="images/ปลาช่อน.jfif" alt="ปลาช่อน"> 
+                <div class="card-info">
+                    <h3>ปลาช่อน</h3> 
+                    <p>ชื่อวิทยาศาสตร์: Channa striata</p>
+                    <span class="badge green">ปลาเศรษฐกิจ</span>
+                    <a href="#" class="btn-small">ดูรายละเอียด</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="footer-info">
+                <h3>🐟 สายพันธุ์ปลาน้ำจืดยอดนิยม</h3>
+                <p>🏫 ศูนย์ส่งเสริมการเรียนรู้ระดับอำเภอเมืองพัทลุง</p>
+            </div>
+            <div class="footer-credit">
+                <p>&copy; 2025 สงวนลิขสิทธิ์ | พัฒนาเว็บไซต์ด้วย ❤️ โดย [ชื่อของคุณ]</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function filterFish(category) {
+            // 1. จัดการปุ่ม Active (เปลี่ยนสีปุ่มที่กด)
+            var buttons = document.getElementsByClassName("filter-btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+            event.currentTarget.classList.add("active");
+
+            // 2. กรองการ์ดปลา
+            var cards = document.getElementsByClassName("fish-card");
+            for (var i = 0; i < cards.length; i++) {
+                var cardCategory = cards[i].getAttribute("data-category");
+                
+                if (category === "all" || cardCategory.includes(category)) {
+                    cards[i].style.display = "block"; // แสดง
+                } else {
+                    cards[i].style.display = "none"; // ซ่อน
+                }
+            }
+        }
+
+        // ฟังก์ชันค้นหาด้วยชื่อ
+        function searchFish() {
+            var input = document.getElementById("searchInput");
+            var filter = input.value.toUpperCase();
+            var cards = document.getElementsByClassName("fish-card");
+
+            for (var i = 0; i < cards.length; i++) {
+                var title = cards[i].getElementsByTagName("h3")[0];
+                var txtValue = title.textContent || title.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

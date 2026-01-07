@@ -1,0 +1,523 @@
+/* =========================================
+   1. ส่วนตั้งค่าพื้นฐาน (Global Styles)
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =========================================
+   2. เมนู (Navbar)
+   ========================================= */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #333;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* =========================================
+   3. ภาพปก (Hero Section)
+   ========================================= */
+.hero {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/แบนเนอร์โครงการ.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* ปรับความสูงได้ที่นี่ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* =========================================
+   4. ส่วนเนื้อหาสาระ & ฟีเจอร์ (Info Section)
+   ========================================= */
+.info-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.info-header {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.info-header h2 {
+    color: #004085;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* กล่อง 3 ช่อง (Features) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-box {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+    background: #eef7ff;
+}
+
+.feature-box .icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.feature-box h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   5. รายชื่อปลา (Fish Grid)
+   ========================================= */
+.fish-section {
+    padding: 60px 0;
+}
+
+.fish-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #004085;
+    font-size: 2rem;
+}
+
+.fish-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.fish-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.fish-card:hover {
+    transform: translateY(-5px);
+}
+
+.fish-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 20px;
+}
+
+.card-info h3 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.card-info p {
+    color: #777;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.btn-small {
+    color: #007bff;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   6. หน้าข่าวสาร/วิดีโอ (News/Video)
+   ========================================= */
+.news-section {
+    padding: 50px 0;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.video-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* อัตราส่วน 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* =========================================
+   7. หน้าผู้จัดทำ (About Us)
+   ========================================= */
+.about-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.about-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.team-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 250px;
+    text-align: center;
+    
+/*ทำให้การขยับดูลื่นไหล ไม่กระตุก */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* เปลี่ยนรูปเมาส์เป็นรูปนิ้วมือ */
+}
+
+/*สั่งให้ขยับเมื่อเมาส์ชี้ (Hover) */
+.team-card:hover {
+    transform: translateY(-10px) scale(1.02); /* ลอยขึ้น 10px และขยายใหญ่นิดนึง */
+    box-shadow: 0 15px 30px rgba(0,123,255,0.2); /* เงาสีฟ้าฟุ้งๆ */
+    border: 1px solid #007bff; /* เพิ่มขอบสีฟ้า */
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #007bff;
+}
+
+/* =========================================
+   8. ส่วนท้ายเว็บ (Footer)
+   ========================================= */
+/* --- Modern Footer Design --- */
+.modern-footer {
+    background-color: #1a252f; /* สีน้ำเงินเข้มเกือบดำ ดูแพง */
+    color: #ecf0f1; /* สีขาวนวล */
+    padding: 40px 0 20px 0;
+    margin-top: 60px;
+    font-size: 1.5rem;
+}
+
+.footer-info {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #34495e; /* เส้นขีดคั่นบางๆ */
+    padding-bottom: 20px;
+}
+
+.footer-info h3 {
+    color: #3498db; /* สีฟ้าสว่าง */
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.footer-credit {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #bdc3c7; /* สีเทาอ่อน */
+}
+/* =========================================
+   9. เพิ่มเติมสำหรับหน้าเกี่ยวกับ (About CSS Update)
+   ========================================= */
+/* ปรับความสูง Hero สำหรับหน้าย่อย ให้เตี้ยลงกว่าหน้าแรก */
+.hero-small {
+    height: 300px;
+}
+
+/* หัวข้อกลางหน้า */
+.section-title {
+    text-align: center;
+    color: #488ad1;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* บทบาทหน้าที่ (สีน้ำเงิน ตัวหนา) */
+.team-role {
+    color: #0243f7;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* รายละเอียดหน้าที่ (ตัวเล็กสีเทา) */
+.team-duty {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* พื้นหลังสีเทา สำหรับส่วนวัตถุประสงค์ */
+.bg-gray {
+    background-color: #f4f4f4;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+}
+
+/* จัดรายการวัตถุประสงค์ให้อ่านง่าย */
+.objective-list {
+    text-align: left;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+/* เส้นขีดคั่น */
+.divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 30px 0;
+}
+
+/* =========================================
+   10. หน้าต่าง Popup (Modal CSS)
+   ========================================= */
+.modal {
+    display: none; /* ซ่อนไว้ก่อน */
+    position: fixed; 
+    z-index: 2000; /* ให้อยู่บนสุดทับทุกอย่าง */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6); /* พื้นหลังสีดำจางๆ */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); /* เบลอพื้นหลังให้ดูหรู */
+}
+
+/* กล่องเนื้อหาข้างใน */
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px; /* ความกว้างสูงสุด */
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: zoomIn 0.3s; /* เอฟเฟกต์เด้งขึ้นมา */
+}
+
+/* การจัดวางรูปและข้อความใน Popup */
+.modal-body {
+    text-align: center;
+}
+
+.modal-body img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #007bff;
+    margin-bottom: 20px;
+}
+
+.modal-text h2 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.more-info {
+    margin-top: 15px;
+    color: #555;
+    font-style: italic;
+    background: #f0f8ff;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* ปุ่มกากบาท (Close Button) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* เอฟเฟกต์ตอนเด้งขึ้นมา */
+@keyframes zoomIn {
+    from {transform: scale(0.7); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+/* =========================================
+   11. ส่วนเสริมหน้า Species (หมวดหมู่ & ปุ่ม)
+   ========================================= */
+
+/* กล่องรวมปุ่มหมวดหมู่ */
+.category-filters {
+    text-align: center;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; /* ให้ปุ่มขึ้นบรรทัดใหม่ถ้าจอเล็ก */
+}
+
+/* ดีไซน์ปุ่มหมวดหมู่ */
+.filter-btn {
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Prompt', sans-serif;
+    font-size: 0.95rem;
+    color: #555;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+/* ปุ่มที่ถูกกดอยู่ (Active) */
+.filter-btn.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    box-shadow: 0 4px 10px rgba(0,123,255,0.3);
+}
+
+/* ป้ายกำกับเล็กๆ บนการ์ด (Badge) */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    color: white;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+
+.badge.green { background-color: #28a745; } /* สีเขียว */
+.badge.blue { background-color: #17a2b8; } /* สีฟ้า */
+.badge.yellow { background-color: #ffc107; color: #333; } /* สีเหลือง */
